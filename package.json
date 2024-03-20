@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "json-server -p 3500 -w data/db.json",
+    "start": "",
     "lint": "next lint"
   },
   "dependencies": {
