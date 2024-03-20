@@ -23,7 +23,6 @@ const Register = () => {
     loading,
     setLoading,
   } = useGlobalContext();
-  console.log(process.env.BASE_URL, "base");
 
   async function createUserHandler(e) {
     e.preventDefault();
