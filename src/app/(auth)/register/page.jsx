@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useGlobalContext } from "@/Hooks/globalStates";
 import { useLayoutEffect } from "react";
 import { useRouter } from "next/navigation";
+import { axiosClient } from "@/api";
 
 const Register = () => {
   const userName = getLoggername();
@@ -22,12 +23,13 @@ const Register = () => {
     loading,
     setLoading,
   } = useGlobalContext();
+  console.log(process.env.BASE_URL, "base");
 
   async function createUserHandler(e) {
     e.preventDefault();
     if (name && email && password) {
       setLoading(true);
-      const response = await axios.post("http://localhost:3500/credentials", {
+      const response = await axiosClient.post("/credentials", {
         name,
         email,
         password,

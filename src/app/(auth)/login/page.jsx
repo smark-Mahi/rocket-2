@@ -7,6 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { getLoggername, setAuth } from "@/helpers/token";
 import { useLayoutEffect } from "react";
+import { axiosClient } from "@/api";
 
 const Login = () => {
   const { email, password, setEmail, setPassword, loading, setLoading } =
@@ -15,25 +16,25 @@ const Login = () => {
   const username = getLoggername();
   async function loginHandler(e) {
     e.preventDefault();
-   if (email && password) {
-     setLoading(true);
-     const response = await axios.get("http://localhost:3500/credentials");
-     console.log(response, "getuserslogin");
-     const isUserExists = response.data.filter(
-       (user, i) => user.email === email
-     );
-     console.log(isUserExists, "user");
-     if (isUserExists) {
-       setAuth(isUserExists[0].name);
-       router.push("/");
-     } else {
-       console.log("user not exist");
-       router.push("/register");
-     }
-     setLoading(false);
-     setEmail("");
-     setPassword("");
-   }
+    if (email && password) {
+      setLoading(true);
+      const response = await axiosClient.get("/credentials");
+      console.log(response, "getuserslogin");
+      const isUserExists = response.data.filter(
+        (user, i) => user.email === email
+      );
+      console.log(isUserExists, "user");
+      if (isUserExists) {
+        setAuth(isUserExists[0].name);
+        router.push("/");
+      } else {
+        console.log("user not exist");
+        router.push("/register");
+      }
+      setLoading(false);
+      setEmail("");
+      setPassword("");
+    }
   }
 
   useLayoutEffect(() => {
