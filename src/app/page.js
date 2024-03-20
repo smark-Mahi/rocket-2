@@ -16,12 +16,16 @@ export default function Home() {
     name: faker.commerce.productName(),
     isSelected: faker.datatype.boolean(),
   }));
-  const [data, setData] = useState(
-    JSON.parse(localStorage.getItem("data") || "[]")
-  );
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(products));
+    const getDate = JSON.parse(localStorage.getItem("data") || "[]");
+    setData(getDate);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
   }, [data]);
 
   console.log(data, "cur");

@@ -7,9 +7,10 @@ const Categories = ({ category, setData, data }) => {
     setSelected(!selected);
     setData([
       ...data,
-      { id: category.id, name: category.name, isSelected: category.selected },
+      { id: category.id, name: category.name, isSelected: !category.selected },
     ]);
   }
+
   return (
     <li className="flex items-center gap-2">
       <span

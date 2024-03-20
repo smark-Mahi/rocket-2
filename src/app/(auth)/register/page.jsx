@@ -25,7 +25,7 @@ const Register = () => {
 
   async function createUserHandler(e) {
     e.preventDefault();
-    if (!name || !email || !password) {
+    if (name && email && password) {
       setLoading(true);
       const response = await axios.post("http://localhost:3500/credentials", {
         name,
