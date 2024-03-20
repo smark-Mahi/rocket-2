@@ -3,7 +3,6 @@ import { useGlobalContext } from "@/Hooks/globalStates";
 import Button from "@/components/Reusablecomponents/Button";
 import Input from "@/components/Reusablecomponents/Input";
 import Link from "next/link";
-import axios from "axios";
 import { useRouter } from "next/navigation";
 import { getLoggername, setAuth } from "@/helpers/token";
 import { useLayoutEffect } from "react";
