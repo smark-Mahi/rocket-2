@@ -2,6 +2,7 @@
 import OTP from "@/components/OTP";
 import Button from "@/components/Reusablecomponents/Button";
 import Input from "@/components/Reusablecomponents/Input";
+import axios from "axios";
 import { getLoggername, setAuth } from "@/helpers/token";
 import Link from "next/link";
 import { useGlobalContext } from "@/Hooks/globalStates";
@@ -22,6 +23,7 @@ const Register = () => {
     loading,
     setLoading,
   } = useGlobalContext();
+  console.log(process.env.BASE_URL, "base");
 
   async function createUserHandler(e) {
     e.preventDefault();

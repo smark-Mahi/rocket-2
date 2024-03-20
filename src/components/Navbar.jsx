@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="flex gap-6 mr-10 text-xs mt-2">
           <span>Help</span>
           <span>Orders&Return</span>
-          <span>Hi,{username}</span>
+          {username && <span>Hi,{username}</span>}
         </div>
       </div>
       <div className="flex justify-between items-center py-4 mx-8">
