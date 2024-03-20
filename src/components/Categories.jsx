@@ -5,7 +5,10 @@ const Categories = ({ category, setData, data }) => {
   const [selected, setSelected] = useState(false);
   function selectHandler(category) {
     setSelected(!selected);
-    setData([...data, { id: category.id, isSelected: category.selected }]);
+    setData([
+      ...data,
+      { id: category.id, name: category.name, isSelected: category.selected },
+    ]);
   }
   return (
     <li className="flex items-center gap-2">

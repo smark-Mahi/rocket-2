@@ -25,17 +25,19 @@ const Register = () => {
 
   async function createUserHandler(e) {
     e.preventDefault();
-    setLoading(true);
-    const response = await axios.post("http://localhost:3500/credentials", {
-      name,
-      email,
-      password,
-    });
-    setName("");
-    setEmail("");
-    setPassword("");
-    setLoading(false);
-    setAuth(response.data.name);
+    if (!name || !email || !password) {
+      setLoading(true);
+      const response = await axios.post("http://localhost:3500/credentials", {
+        name,
+        email,
+        password,
+      });
+      setName("");
+      setEmail("");
+      setPassword("");
+      setLoading(false);
+      setAuth(response.data.name);
+    }
   }
 
   useLayoutEffect(() => {
