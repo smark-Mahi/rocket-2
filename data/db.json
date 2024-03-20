@@ -1,0 +1,40 @@
+{
+  "credentials": [
+    {
+      "name": "sumeria",
+      "email": "sumeriamahi1906@gmail.com",
+      "password": "12345$smARK",
+      "id": "36eb"
+    },
+    {
+      "id": "90ec",
+      "name": "swapnil",
+      "email": "swapnil@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "aa63",
+      "name": "swapnil",
+      "email": "swapnil@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "99ec",
+      "name": "swap",
+      "email": "swap@gmail.com",
+      "password": "2141413345"
+    },
+    {
+      "id": "3496",
+      "name": "azzz",
+      "email": "azz@gmail.com",
+      "password": "1324324"
+    },
+    {
+      "id": "167b",
+      "name": "ayy",
+      "email": "ayy@gmail.com",
+      "password": "32424242"
+    }
+  ]
+}
