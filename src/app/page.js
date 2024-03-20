@@ -24,9 +24,9 @@ export default function Home() {
     setData(getDate);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(data));
-  }, [data]);
+  // useEffect(() => {
+  //   localStorage.setItem("data", JSON.stringify(data));
+  // }, [data]);
 
   console.log(data, "cur");
   return (
