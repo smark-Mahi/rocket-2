@@ -18,6 +18,7 @@ const Categories = ({ category, setData, data }) => {
     };
     console.log(data, "datay");
     localStorage.setItem("data", JSON.stringify(data));
+    setData(data);
   }
 
   return (

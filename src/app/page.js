@@ -29,7 +29,11 @@ export default function Home() {
     setData(getDate);
   }, []);
 
-  console.log(data, "cur");
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
+  
   return (
     <div className=" h-screen flex justify-center pt-24">
       <div className="w-[500px] h-[500px] flex flex-col  items-center gap-8 border border-solid border-[#c7c7c7] rounded-xl py-8">
