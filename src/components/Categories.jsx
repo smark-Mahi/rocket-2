@@ -14,9 +14,10 @@ const Categories = ({ category, setData, data }) => {
     data[key] = {
       id: category.id,
       name: category.name,
-      isSelected: !category.selected,
+      isSelected: !category.isSelected,
     };
     const updatedData = [...data];
+    console.log(data[key], "updated");
     setData(updatedData);
   }
 
@@ -32,10 +33,10 @@ const Categories = ({ category, setData, data }) => {
       <span
         onClick={() => selectHandler(category)}
         className={`w-4 h-4 rounded-sm cursor-pointer flex items-center justify-center  ${
-          selected || category.isSelected ? "bg-black" : "bg-[#CCCCCC]"
+          category.isSelected ? "bg-black" : "bg-[rgb(204,204,204)]"
         }`}
       >
-        {selected || category.isSelected ? (
+        {category.isSelected ? (
           <IoCheckmark className="text-white text-sm" />
         ) : (
           ""
