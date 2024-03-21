@@ -19,14 +19,14 @@ export default function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    if (data.length !== 0) {
+    if (JSON.parse(localStorage.getItem("data"))) {
+      setData(JSON.parse(localStorage.getItem("data")));
       return;
     }
     localStorage.setItem("data", JSON.stringify(products));
     const getDate = JSON.parse(localStorage.getItem("data") || "[]");
     setData(getDate);
   }, []);
-
 
   return (
     <div className=" h-screen flex justify-center pt-24">
