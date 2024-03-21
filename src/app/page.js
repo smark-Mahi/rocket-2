@@ -24,13 +24,18 @@ export default function Home() {
     if (data.length !== 0) {
       return;
     }
-    localStorage.setItem("data", JSON.stringify(products));
-    const getDate = JSON.parse(localStorage.getItem("data") || "[]");
+    if (localStorage) {
+      localStorage.setItem("data", JSON.stringify(products));
+        const getDate = JSON.parse(localStorage.getItem("data") || "[]");
+    }
     setData(getDate);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(data));
+    const isServer = typeof window === "undefined";
+    if (!isServer) {
+      localStorage.setItem("data", JSON.stringify(data));
+    }
   }, [data]);
 
   

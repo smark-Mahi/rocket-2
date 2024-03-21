@@ -17,7 +17,10 @@ const Categories = ({ category, setData, data }) => {
       isSelected: !category.selected,
     };
     console.log(data, "datay");
-    localStorage.setItem("data", JSON.stringify(data));
+    const isServer = typeof window === "undefined";
+    if (!isServer) {
+      localStorage.setItem("data", JSON.stringify(data));
+    }
     setData(data);
   }
 
