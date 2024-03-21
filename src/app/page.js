@@ -17,7 +17,6 @@ export default function Home() {
     isSelected: faker.datatype.boolean(),
   }));
   const [data, setData] = useState([]);
-  //JSON.parse(localStorage.getItem("data") || "[]")
 
   useEffect(() => {
     if (data.length !== 0) {
@@ -28,12 +27,6 @@ export default function Home() {
     setData(getDate);
   }, []);
 
-  // useEffect(() => {
-  //   const isServer = typeof window === "undefined";
-  //   if (!isServer) {
-  //     localStorage.setItem("data", JSON.stringify(data));
-  //   }
-  // }, [data]);
 
   return (
     <div className=" h-screen flex justify-center pt-24">
