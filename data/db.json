@@ -23,6 +23,18 @@
       "name": "arkkk",
       "email": "arkkk@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "78b9",
+      "name": "summ",
+      "email": "summ@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "b4b0",
+      "name": "sumer",
+      "email": "sumer@gmail.com",
+      "password": "12345"
     }
   ]
 }
