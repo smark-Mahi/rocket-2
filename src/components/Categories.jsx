@@ -6,7 +6,7 @@ const Categories = ({ category, setData, data }) => {
   function selectHandler(category) {
     setSelected(!selected);
     let key;
-    const getItem = data.filter((item, i) => {
+    data.filter((item, i) => {
       if (item.id === category.id) {
         key = i;
       }
