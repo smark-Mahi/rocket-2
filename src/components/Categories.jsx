@@ -1,14 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoCheckmark } from "react-icons/io5";
 const Categories = ({ category, setData, data }) => {
   const [selected, setSelected] = useState(false);
   function selectHandler(category) {
     setSelected(!selected);
-    setData([
-      ...data,
-      { id: category.id, name: category.name, isSelected: !category.selected },
-    ]);
+    let key;
+    const getItem = data.filter((item, i) => {
+      if (item.id === category.id) {
+        key = i;
+      }
+    });
+    data[key] = {
+      id: category.id,
+      name: category.name,
+      isSelected: !category.selected,
+    };
+    console.log(data, "datay");
+    localStorage.setItem("data", JSON.stringify(data));
   }
 
   return (

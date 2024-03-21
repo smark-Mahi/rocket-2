@@ -16,17 +16,18 @@ export default function Home() {
     name: faker.commerce.productName(),
     isSelected: faker.datatype.boolean(),
   }));
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(
+    JSON.parse(localStorage.getItem("data") || "[]")
+  );
 
   useEffect(() => {
+    if (data.length !== 0) {
+      return;
+    }
     localStorage.setItem("data", JSON.stringify(products));
     const getDate = JSON.parse(localStorage.getItem("data") || "[]");
     setData(getDate);
   }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("data", JSON.stringify(data));
-  // }, [data]);
 
   console.log(data, "cur");
   return (
