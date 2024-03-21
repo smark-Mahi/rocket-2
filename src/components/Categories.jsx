@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoCheckmark } from "react-icons/io5";
 const Categories = ({ category, setData, data }) => {
   const [selected, setSelected] = useState(false);
