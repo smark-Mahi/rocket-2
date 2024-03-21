@@ -16,9 +16,7 @@ export default function Home() {
     name: faker.commerce.productName(),
     isSelected: faker.datatype.boolean(),
   }));
-  const [data, setData] = useState(
-    JSON.parse(localStorage.getItem("data") || "[]")
-  );
+  const [data, setData] = useState();
 
   useEffect(() => {
     if (data.length !== 0) {
@@ -29,12 +27,12 @@ export default function Home() {
     setData(getDate);
   }, []);
 
-  useEffect(() => {
-    const isServer = typeof window === "undefined";
-    if (!isServer) {
-      localStorage.setItem("data", JSON.stringify(data));
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   const isServer = typeof window === "undefined";
+  //   if (!isServer) {
+  //     localStorage.setItem("data", JSON.stringify(data));
+  //   }
+  // }, [data]);
 
   return (
     <div className=" h-screen flex justify-center pt-24">
