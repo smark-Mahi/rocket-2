@@ -16,7 +16,8 @@ export default function Home() {
     name: faker.commerce.productName(),
     isSelected: faker.datatype.boolean(),
   }));
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
+  //JSON.parse(localStorage.getItem("data") || "[]")
 
   useEffect(() => {
     if (data.length !== 0) {
