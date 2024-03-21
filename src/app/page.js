@@ -24,10 +24,8 @@ export default function Home() {
     if (data.length !== 0) {
       return;
     }
-    if (localStorage) {
-      localStorage.setItem("data", JSON.stringify(products));
-        const getDate = JSON.parse(localStorage.getItem("data") || "[]");
-    }
+    localStorage.setItem("data", JSON.stringify(products));
+    const getDate = JSON.parse(localStorage.getItem("data") || "[]");
     setData(getDate);
   }, []);
 
@@ -38,7 +36,6 @@ export default function Home() {
     }
   }, [data]);
 
-  
   return (
     <div className=" h-screen flex justify-center pt-24">
       <div className="w-[500px] h-[500px] flex flex-col  items-center gap-8 border border-solid border-[#c7c7c7] rounded-xl py-8">
